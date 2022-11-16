@@ -7,7 +7,7 @@ metadata:
 
 create_namespace("mongodb-test")
 
-k8s_yaml(helm("charts/community-operator", name = "mongodb-test", namespace = "mongodb-test"))
+k8s_yaml(helm("charts/community-operator", name = "mongodb-test", namespace = "mongodb-test", values = "values.yaml"))
 
 objects = read_yaml_stream("mongodb.yaml")
 for o in objects:
